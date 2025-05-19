@@ -521,7 +521,7 @@ object Functions {
         action()
         loop()
       case None =>
-        println("Неверный ввод.")
+        println("Неверный ввод.") 
         loop()
     }
   }
