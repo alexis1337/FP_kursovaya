@@ -1,0 +1,4 @@
+[debug] [vuz-test] Classpath dependencies List()
+[debug] [vuz-test] Dependencies from configurations List(vuz)
+[debug] Bloop wrote the configuration of project 'vuz-test' to 'C:\Users\Alexis\AppData\Local\Temp\vuz\.bloop\vuz-test.json'
+[success] Generated .bloop\vuz-test.json
