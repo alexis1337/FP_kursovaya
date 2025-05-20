@@ -1,3 +1,5 @@
+//> using dep "org.typelevel::cats-effect:3.5.3"
+
 import Functions._
 import Models._
 
@@ -9,7 +11,7 @@ object Main {
     SQLiteDatabase.createTimetableTable()
     mainLoop()  // Запуск основного цикла
   }
-
+ 
   def mainLoop(): Unit = {
   val menuOptions = Seq(
     ("1", "Найти студента", () => showStudentSearch()),

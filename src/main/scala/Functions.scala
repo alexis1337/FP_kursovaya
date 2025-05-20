@@ -18,9 +18,12 @@ object Functions {
         println(s"Ошибка! Введите число от $min до $max.")
         None
     }
-  }.collectFirst { case Some(value) => value }.get
-}
+  }.collectFirst { case Some(value) => value }.getOrElse {
+  throw new RuntimeException("Не удалось прочитать корректное число.")
+    }
+  }
 
+  // Выбор факультета из списка
   def chooseFaculty(faculties: List[String]): String = {
     Iterator.continually {
       faculties.zipWithIndex.foreach { case (facultyName, index) => println(s"${index + 1}. $facultyName") }
@@ -36,7 +39,7 @@ object Functions {
 
                                           // Работа со студентами
 
-  // Поиск
+  // Поиск студента по факультету и году поступления
   def showStudentSearch(): Unit = {
   val faculty = chooseFaculty(faculties)
   val year = readInt("Введите год поступления: ", 2021, 2024)
@@ -128,7 +131,7 @@ object Functions {
   def removeStudent(name: String, confirmInput: String): Boolean =
   confirmInput.trim.toLowerCase == "y" && name.nonEmpty
 
-  // Удаление
+  // Удаление студента из списка
   def deleteStudentFromDatabase(): Unit = {
   val name = scala.io.StdIn.readLine("Введите имя студента для отчисления: ").trim
 

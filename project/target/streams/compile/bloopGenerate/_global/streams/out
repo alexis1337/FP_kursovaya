@@ -1,4 +1,4 @@
-[0m[[0m[0mdebug[0m] [0m[0m[vuz-build] Classpath dependencies List()[0m
-[0m[[0m[0mdebug[0m] [0m[0m[vuz-build] Dependencies from configurations List()[0m
-[0m[[0m[0mdebug[0m] [0m[0mBloop wrote the configuration of project 'vuz-build' to 'C:\Users\Alexis\AppData\Local\Temp\vuz\project\.bloop\vuz-build.json'[0m
-[0m[[0m[32msuccess[0m] [0m[0mGenerated .bloop\vuz-build.json[0m
+[debug] [vuz-build] Classpath dependencies List()
+[debug] [vuz-build] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'vuz-build' to 'C:\Users\Alexis\AppData\Local\Temp\vuz\project\.bloop\vuz-build.json'
+[success] Generated .bloop\vuz-build.json

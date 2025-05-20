@@ -8,47 +8,47 @@
             "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\src\\test\\scala",
             "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\src\\test\\scala-3",
             "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\src\\test\\java",
-            "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\target\\scala-3.3.4\\src_managed\\test"
+            "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\target\\scala-3.3.1\\src_managed\\test"
         ],
         "dependencies": [
             "vuz"
         ],
         "classpath": [
             "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\.bloop\\vuz\\scala-3\\classes",
-            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.3.4\\scala3-library_3-3.3.4.jar",
+            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.3.1\\scala3-library_3-3.3.1.jar",
             "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\modules\\scala-parser-combinators_3\\2.3.0\\scala-parser-combinators_3-2.3.0.jar",
             "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\xerial\\sqlite-jdbc\\3.34.0\\sqlite-jdbc-3.34.0.jar",
-            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.14\\scala-library-2.13.14.jar"
+            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar"
         ],
         "out": "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\.bloop\\vuz",
         "classesDir": "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\.bloop\\vuz\\scala-3\\test-classes",
         "resources": [
             "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\src\\test\\resources",
-            "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\target\\scala-3.3.4\\resource_managed\\test"
+            "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\target\\scala-3.3.1\\resource_managed\\test"
         ],
         "scala": {
             "organization": "org.scala-lang",
             "name": "scala-compiler",
-            "version": "3.3.4",
+            "version": "3.3.1",
             "options": [
                 
             ],
             "jars": [
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.3.4\\scala3-library_3-3.3.4.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.14\\scala-library-2.13.14.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-compiler_3\\3.3.4\\scala3-compiler_3-3.3.4.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-interfaces\\3.3.4\\scala3-interfaces-3.3.4.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\tasty-core_3\\3.3.4\\tasty-core_3-3.3.4.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\modules\\scala-asm\\9.6.0-scala-1\\scala-asm-9.6.0-scala-1.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\compiler-interface\\1.9.6\\compiler-interface-1.9.6.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jline\\jline-reader\\3.25.1\\jline-reader-3.25.1.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jline\\jline-terminal\\3.25.1\\jline-terminal-3.25.1.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jline\\jline-terminal-jna\\3.25.1\\jline-terminal-jna-3.25.1.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\util-interface\\1.9.8\\util-interface-1.9.8.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jline\\jline-native\\3.25.1\\jline-native-3.25.1.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\net\\java\\dev\\jna\\jna\\5.14.0\\jna-5.14.0.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scaladoc_3\\3.3.4\\scaladoc_3-3.3.4.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-tasty-inspector_3\\3.3.4\\scala3-tasty-inspector_3-3.3.4.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.3.1\\scala3-library_3-3.3.1.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-compiler_3\\3.3.1\\scala3-compiler_3-3.3.1.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-interfaces\\3.3.1\\scala3-interfaces-3.3.1.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\tasty-core_3\\3.3.1\\tasty-core_3-3.3.1.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\modules\\scala-asm\\9.5.0-scala-1\\scala-asm-9.5.0-scala-1.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\compiler-interface\\1.3.5\\compiler-interface-1.3.5.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jline\\jline-reader\\3.19.0\\jline-reader-3.19.0.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jline\\jline-terminal\\3.19.0\\jline-terminal-3.19.0.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jline\\jline-terminal-jna\\3.19.0\\jline-terminal-jna-3.19.0.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\google\\protobuf\\protobuf-java\\3.7.0\\protobuf-java-3.7.0.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\util-interface\\1.3.0\\util-interface-1.3.0.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\net\\java\\dev\\jna\\jna\\5.3.1\\jna-5.3.1.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scaladoc_3\\3.3.1\\scaladoc_3-3.3.1.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-tasty-inspector_3\\3.3.1\\scala3-tasty-inspector_3-3.3.1.jar",
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\vladsch\\flexmark\\flexmark\\0.62.2\\flexmark-0.62.2.jar",
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\vladsch\\flexmark\\flexmark-util-ast\\0.62.2\\flexmark-util-ast-0.62.2.jar",
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\vladsch\\flexmark\\flexmark-util-data\\0.62.2\\flexmark-util-data-0.62.2.jar",
@@ -62,7 +62,7 @@
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\vladsch\\flexmark\\flexmark-ext-tables\\0.62.2\\flexmark-ext-tables-0.62.2.jar",
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\vladsch\\flexmark\\flexmark-ext-yaml-front-matter\\0.62.2\\flexmark-ext-yaml-front-matter-0.62.2.jar",
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\nl\\big-o\\liqp\\0.8.2\\liqp-0.8.2.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jsoup\\jsoup\\1.17.2\\jsoup-1.17.2.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jsoup\\jsoup\\1.14.3\\jsoup-1.14.3.jar",
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\fasterxml\\jackson\\dataformat\\jackson-dataformat-yaml\\2.15.1\\jackson-dataformat-yaml-2.15.1.jar",
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\vladsch\\flexmark\\flexmark-util-builder\\0.62.2\\flexmark-util-builder-0.62.2.jar",
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\vladsch\\flexmark\\flexmark-util-collection\\0.62.2\\flexmark-util-collection-0.62.2.jar",
@@ -95,7 +95,7 @@
                 "filterLibraryFromClasspath": false
             },
             "bridgeJars": [
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-sbt-bridge\\3.3.4\\scala3-sbt-bridge-3.3.4.jar"
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-sbt-bridge\\3.3.1\\scala3-sbt-bridge-3.3.1.jar"
             ]
         },
         "java": {
@@ -165,7 +165,7 @@
         "platform": {
             "name": "jvm",
             "config": {
-                "home": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\cache\\arc\\https\\github.com\\adoptium\\temurin17-binaries\\releases\\download\\jdk-17.0.15%252B6\\OpenJDK17U-jdk_x64_windows_hotspot_17.0.15_6.zip\\jdk-17.0.15+6",
+                "home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15.6-hotspot",
                 "options": [
                     "-Duser.dir=C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz"
                 ]
@@ -179,17 +179,17 @@
                 {
                     "organization": "org.scala-lang",
                     "name": "scala3-library_3",
-                    "version": "3.3.4",
+                    "version": "3.3.1",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "scala3-library_3",
-                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.3.4\\scala3-library_3-3.3.4.jar"
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.3.1\\scala3-library_3-3.3.1.jar"
                         },
                         {
                             "name": "scala3-library_3",
                             "classifier": "sources",
-                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.3.4\\scala3-library_3-3.3.4-sources.jar"
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.3.1\\scala3-library_3-3.3.1-sources.jar"
                         }
                     ]
                 },
@@ -230,17 +230,17 @@
                 {
                     "organization": "org.scala-lang",
                     "name": "scala-library",
-                    "version": "2.13.14",
+                    "version": "2.13.10",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "scala-library",
-                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.14\\scala-library-2.13.14.jar"
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar"
                         },
                         {
                             "name": "scala-library",
                             "classifier": "sources",
-                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.14\\scala-library-2.13.14-sources.jar"
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10-sources.jar"
                         }
                     ]
                 }

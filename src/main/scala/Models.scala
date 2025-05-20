@@ -1,4 +1,4 @@
-object Models {
+object Models { // Предполагается внедрение аутентификации
   case class Student(name: String, group: String, year: Int, direction: String, faculty: String)
   case class Professor(name: String, title: String, email: String, disciplines: List[String], faculty: String)
   case class User(username: String, password: String, role: Role)
@@ -9,4 +9,5 @@ object Models {
   sealed trait Role
   case object StudentRole extends Role
   case object ProfessorRole extends Role
+  case object DecanatRole extends Role
 }
