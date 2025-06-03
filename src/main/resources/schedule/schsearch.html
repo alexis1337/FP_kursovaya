@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Расписание</title>
+</head>
+<body>
+  <h1>Поиск расписания</h1>
+  <form method="GET" action="/timetable">
+    Группа: <input type="text" name="group" />
+    (Опционально) День недели: <input type="text" name="day" />
+    <button type="submit">Найти</button>
+  </form>
+
+  <h2>{header}</h2>
+  <ul>
+    {timetableList}
+  </ul>
+
+  <a href="/menu">Назад</a>
+</body>
+</html>

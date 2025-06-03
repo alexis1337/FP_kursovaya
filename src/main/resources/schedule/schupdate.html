@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Редактировать запись расписания</title>
+</head>
+<body>
+  <h1>Редактировать запись расписания</h1>
+  <form method="POST" action="/timetableActions/edit">
+    <label>Группа для поиска: <input type="text" name="searchGroup" required /></label><br/>
+    <label>День недели для поиска: <input type="text" name="searchDay" required /></label><br/>
+    <label>Новый день недели: <input type="text" name="day" /></label><br/>
+    <label>Новое время: <input type="text" name="time" /></label><br/>
+    <label>Новый предмет: <input type="text" name="subject" /></label><br/>
+    <label>Новая аудитория: <input type="text" name="room" /></label><br/>
+    <button type="submit">Обновить</button>
+  </form>
+  <a href="/timetableActions">Назад</a>
+</body>
+</html>

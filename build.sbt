@@ -1,7 +1,7 @@
 
 // The simplest possible sbt build file is just one line:
 
-scalaVersion := "3.3.1"
+scalaVersion := "3.7.0"
 // That is, to create a valid sbt build, all you've got to do is define the
 // version of Scala you'd like your project to use.
 
@@ -78,3 +78,9 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % 
 
 libraryDependencies += "org.xerial" % "sqlite-jdbc" % "3.34.0"
 
+libraryDependencies ++= Seq(
+  "org.typelevel" %% "cats-core" % "2.10.0",           // Cats core
+  "org.typelevel" %% "cats-effect" % "3.5.1",         // Cats Effect 3
+  "com.sun.net.httpserver" % "http" % "20070405",     // Встроенный HttpServer (обычно в JDK)
+  "org.scalatest" %% "scalatest" % "3.2.17" % Test    // Тестирование
+)

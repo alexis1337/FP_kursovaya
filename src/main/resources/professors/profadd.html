@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Добавить преподавателя</title>
+</head>
+<body>
+  <h1>Добавить преподавателя</h1>
+  <form method="POST" action="/professorActions/add">
+    <label>Имя: <input type="text" name="name" required /></label><br/>
+    <label>Звание: <input type="text" name="title" required /></label><br/>
+    <label>Email: <input type="email" name="email" required /></label><br/>
+    <label>Дисциплины (через запятую): <input type="text" name="disciplines" required /></label><br/>
+    <label>Факультет: <input type="text" name="faculty" required /></label><br/>
+    <button type="submit">Добавить</button>
+  </form>
+  <a href="/professorActions">Назад</a>
+</body>
+</html>

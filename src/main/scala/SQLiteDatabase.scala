@@ -1,66 +1,71 @@
 //> using dep "org.xerial:sqlite-jdbc:3.49.1.0"
 
 import java.sql.{Connection, DriverManager, PreparedStatement, ResultSet}
-import Models._
 import scala.util.{Try, Success, Failure}
+import Models._
 
 object SQLiteDatabase {
-
-  // Соединение с БД
-  private val connection: Try[Connection] = Try {
-  DriverManager.getConnection("jdbc:sqlite:university.db")
-}
-
-  // Создание таблицы со студентами
-  def createStudentsTable(): Unit = {
-  connection match {
-    case Success(conn) =>
-      val stmt = conn.createStatement()
-      val sql = """
-          |CREATE TABLE IF NOT EXISTS students (
-          |  id INTEGER PRIMARY KEY AUTOINCREMENT,
-          |  name TEXT NOT NULL,
-          |  group_name TEXT NOT NULL,
-          |  year INTEGER NOT NULL,
-          |  direction TEXT NOT NULL,
-          |  faculty TEXT NOT NULL
-          |)
-          |""".stripMargin
-      stmt.execute(sql)
-      stmt.close()
-    case Failure(ex) =>
-      println(s"Ошибка при подключении к базе данных: ${ex.getMessage}")
+  // Открытие соединения 
+  private def withConnection[A](f: Connection => A): Try[A] = Try {
+    val conn = DriverManager.getConnection("jdbc:sqlite:university.db")
+    try f(conn)
+    finally conn.close()
   }
-}
 
-  // Создание таблицы с преподавателями
-  def createProfessorsTable(): Unit = {
-  connection match {
-    case Success(conn) =>
-      val stmt = conn.createStatement()
-      val sql = """
-    CREATE TABLE IF NOT EXISTS professors (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      title TEXT NOT NULL,
-      email TEXT NOT NULL,
-      disciplines TEXT NOT NULL,
-      faculty TEXT NOT NULL
-    )
-  """.stripMargin
-      stmt.execute(sql)
-      stmt.close()
-    case Failure(ex) =>
-      println(s"Ошибка при подключении к базе данных: ${ex.getMessage}")
+  // Вспомогательный метод для запросов на изменение данных
+  private def executeUpdate(sql: String)(setParams: PreparedStatement => Unit): Try[Int] =
+    withConnection { conn =>
+      val ps = conn.prepareStatement(sql)
+      setParams(ps)
+      val count = ps.executeUpdate()
+      ps.close()
+      count
+    }
+
+  // Вспомогательный метод для выборок списка
+  private def queryList[A](sql: String, paramSetter: Option[PreparedStatement => Unit] = None)
+                          (mapper: ResultSet => A): Try[List[A]] =
+    withConnection { conn =>
+      val ps = conn.prepareStatement(sql)
+      paramSetter.foreach(_(ps))
+      val rs = ps.executeQuery()
+      val buf = Iterator.continually(rs).takeWhile(_.next()).map(mapper).toList
+      rs.close()
+      ps.close()
+      buf
+    }
+
+  // Создание таблиц
+  def createStudentsTable(): Try[Unit] = withConnection { conn =>
+    val sql = """
+      |CREATE TABLE IF NOT EXISTS students (
+      |  id INTEGER PRIMARY KEY AUTOINCREMENT,
+      |  name TEXT NOT NULL,
+      |  group_name TEXT NOT NULL,
+      |  year INTEGER NOT NULL,
+      |  direction TEXT NOT NULL,
+      |  faculty TEXT NOT NULL
+      |)
+    """.stripMargin
+    conn.createStatement().execute(sql)
   }
-}
 
-  // Создание таблицы с расписанием
-  def createTimetableTable(): Unit = {
-  connection match {
-    case Success(conn) =>
-      val stmt = conn.createStatement()
-      val sql = """
+  def createProfessorsTable(): Try[Unit] = withConnection { conn =>
+    val sql = """
+      |CREATE TABLE IF NOT EXISTS professors (
+      |  id INTEGER PRIMARY KEY AUTOINCREMENT,
+      |  name TEXT NOT NULL,
+      |  title TEXT NOT NULL,
+      |  email TEXT NOT NULL,
+      |  disciplines TEXT NOT NULL,
+      |  faculty TEXT NOT NULL
+      |)
+    """.stripMargin
+    conn.createStatement().execute(sql)
+  }
+
+  def createTimetableTable(): Try[Unit] = withConnection { conn =>
+    val sql = """
       |CREATE TABLE IF NOT EXISTS timetables (
       |  id INTEGER PRIMARY KEY AUTOINCREMENT,
       |  group_name TEXT NOT NULL,
@@ -69,187 +74,97 @@ object SQLiteDatabase {
       |  subject TEXT NOT NULL,
       |  room TEXT NOT NULL
       |)
-      |""".stripMargin
-      stmt.execute(sql)
-      stmt.close()
-    case Failure(ex) =>
-      println(s"Ошибка при подключении к базе данных: ${ex.getMessage}")
+    """.stripMargin
+    conn.createStatement().execute(sql)
   }
-}
 
-  // Вставка нового студента в БД
-  def insertStudent(student: Student): Unit = {
-  connection.toOption.foreach { conn =>
-    val insertSQL =
-      "INSERT INTO students (name, group_name, year, direction, faculty) VALUES (?, ?, ?, ?, ?)"
-    val pstmt = conn.prepareStatement(insertSQL)
-    pstmt.setString(1, student.name)
-    pstmt.setString(2, student.group)
-    pstmt.setInt(3, student.year)
-    pstmt.setString(4, student.direction)
-    pstmt.setString(5, student.faculty)
-    pstmt.executeUpdate()
-    pstmt.close()
+  // CRUD для студентов
+  def insertStudent(student: Student): Try[Int] = executeUpdate(
+    "INSERT INTO students (name, group_name, year, direction, faculty) VALUES (?, ?, ?, ?, ?)"
+  ) { ps =>
+    println(s"Inserting student: $student")
+    ps.setString(1, student.name)
+    ps.setString(2, student.group)
+    ps.setInt(3, student.year)
+    ps.setString(4, student.direction)
+    ps.setString(5, student.faculty)
   }
-}
 
-  // Удаление студента из БД
-  def deleteStudent(name: String): Unit = {
-  connection.toOption.foreach { conn =>
-    val sql = "DELETE FROM students WHERE name = ?"
-    val stmt = conn.prepareStatement(sql)
-    stmt.setString(1, name)
-    stmt.executeUpdate()
-    stmt.close()
+  def deleteStudent(name: String): Try[Int] = executeUpdate(
+    "DELETE FROM students WHERE name = ?"
+  )(_.setString(1, name))
+
+  def getAllStudents(): Try[List[Student]] = queryList(
+    "SELECT name, group_name, year, direction, faculty FROM students"
+  )(rs => {
+    val student = Student(
+      rs.getString("name"),
+      rs.getString("group_name"),
+      rs.getInt("year"),
+      rs.getString("direction"),
+      rs.getString("faculty")
+    )
+    println(s"Read student: $student")
+    student
+  })
+
+  // CRUD для преподавателей
+  def insertProfessor(prof: Professor): Try[Int] = executeUpdate(
+    "INSERT INTO professors (name, title, email, disciplines, faculty) VALUES (?, ?, ?, ?, ?)"
+  ) { ps =>
+    ps.setString(1, prof.name)
+    ps.setString(2, prof.title)
+    ps.setString(3, prof.email)
+    ps.setString(4, prof.disciplines.mkString(","))
+    ps.setString(5, prof.faculty)
   }
-}
 
-  // Получение всех студентов из БД
-  def getAllStudents(): Try[List[Student]] = connection.flatMap { conn =>
-  Try {
-    val stmt = conn.createStatement()
-    val rs = stmt.executeQuery("SELECT * FROM students")
-    val students = Iterator
-      .continually(rs)
-      .takeWhile(_.next())
-      .map(rs =>
-        Student(
-          rs.getString("name"),
-          rs.getString("group_name"),
-          rs.getInt("year"),
-          rs.getString("direction"),
-          rs.getString("faculty")
-        )
-      )
-      .toList
-    rs.close()
-    stmt.close()
-    students
+  def deleteProfessor(name: String): Try[Int] = executeUpdate(
+    "DELETE FROM professors WHERE name = ?"
+  )(_.setString(1, name))
+
+  def getAllProfessors(): Try[List[Professor]] = queryList(
+    "SELECT name, title, email, disciplines, faculty FROM professors"
+  )(rs => {
+    val discs = rs.getString("disciplines").split(",").map(_.trim).toList
+    Professor(
+      rs.getString("name"),
+      rs.getString("title"),
+      rs.getString("email"),
+      discs,
+      rs.getString("faculty")
+    )
+  })
+
+  // CRUD для расписания
+  def insertTimetableEntry(entry: TimetableEntry, group: String): Try[Int] = executeUpdate(
+    "INSERT INTO timetables (group_name, day, time, subject, room) VALUES (?, ?, ?, ?, ?)"
+  ) { ps =>
+    ps.setString(1, group)
+    ps.setString(2, entry.day)
+    ps.setString(3, entry.time)
+    ps.setString(4, entry.subject)
+    ps.setString(5, entry.room)
   }
-}
 
-  // Вставка нового преподавателя в БД
-  def insertProfessor(professor: Professor): Unit = {
-  connection.toOption.foreach { conn =>
-    val sql = "INSERT INTO professors (name, title, email, disciplines, faculty) VALUES (?, ?, ?, ?, ?)"
-    val stmt = conn.prepareStatement(sql)
-    stmt.setString(1, professor.name)
-    stmt.setString(2, professor.title)
-    stmt.setString(3, professor.email)
-    stmt.setString(4, professor.disciplines.mkString(","))
-    stmt.setString(5, professor.faculty)
-    stmt.executeUpdate()
-    stmt.close()
+  def deleteTimetableByGroup(group: String): Try[Int] = executeUpdate(
+    "DELETE FROM timetables WHERE group_name = ?"
+  )(_.setString(1, group))
+
+  def deleteTimetableByGroupAndDay(group: String, day: String): Try[Int] = executeUpdate(
+    "DELETE FROM timetables WHERE group_name = ? AND day = ?"
+  ) { ps =>
+    ps.setString(1, group)
+    ps.setString(2, day)
   }
-}
 
-  // Удаление преподавателя из БД
-  def deleteProfessor(name: String): Unit = {
-  connection.toOption.foreach { conn =>
-    val sql = "DELETE FROM professors WHERE name = ?"
-    val stmt = conn.prepareStatement(sql)
-    stmt.setString(1, name)
-    stmt.executeUpdate()
-    stmt.close()
-  }
-}
-
-  // Получение всех преподавателей из БД
-  def getAllProfessors(): Option[List[Professor]] = {
-  connection.toOption.map { conn =>
-    val stmt = conn.createStatement()
-    val rs = stmt.executeQuery("SELECT * FROM professors")
-
-    val professors = Iterator
-      .continually(rs)
-      .takeWhile(_.next())
-      .map { rs =>
-        val disciplines = rs.getString("disciplines").split(",").map(_.trim).toList
-        Professor(
-          rs.getString("name"),
-          rs.getString("title"),
-          rs.getString("email"),
-          disciplines,
-          rs.getString("faculty")
-        )
-      }
-      .toList
-
-    rs.close()
-    stmt.close()
-    professors
-  }
-}
-
-  // Вставка нового расписания в БД
-  def insertTimetableEntry(entry: TimetableEntry, group: String): Unit = {
-  connection.toOption.foreach { conn =>
-    val sql = "INSERT INTO timetables (group_name, day, time, subject, room) VALUES (?, ?, ?, ?, ?)"
-    val pstmt = conn.prepareStatement(sql)
-    pstmt.setString(1, group)
-    pstmt.setString(2, entry.day)
-    pstmt.setString(3, entry.time)
-    pstmt.setString(4, entry.subject)
-    pstmt.setString(5, entry.room)
-    pstmt.executeUpdate()
-    pstmt.close()
-  }
-}
-
-  // Удаление расписания из БД
-  def deleteTimetableByGroup(group: String): Unit = {
-  connection.toOption.foreach { conn =>
-    val sql = "DELETE FROM timetables WHERE group_name = ?"
-    val stmt = conn.prepareStatement(sql)
-    stmt.setString(1, group)
-    stmt.executeUpdate()
-    stmt.close()
-  }
-}
-
-  // Получение расписания по группе
-  def getTimetableByGroup(group: String): Option[List[TimetableEntry]] = {
-  connection.toOption.map { conn =>
-    val sql = "SELECT day, time, subject, room FROM timetables WHERE group_name = ?"
-    val stmt = conn.prepareStatement(sql)
-    stmt.setString(1, group)
-    val rs = stmt.executeQuery()
-
-    val entries = Iterator
-      .continually(rs)
-      .takeWhile(_.next())
-      .map(rs =>
-        TimetableEntry(
-          rs.getString("day"),
-          rs.getString("time"),
-          rs.getString("subject"),
-          rs.getString("room")
-        )
-      )
-      .toList
-
-    rs.close()
-    stmt.close()
-    entries
-  }
-}
-
-  // Удаление дня с расписанием 
-  def deleteTimetableByGroupAndDay(group: String, day: String): Unit = {
-  connection.toOption.foreach { conn =>
-    val sql = "DELETE FROM timetables WHERE group_name = ? AND day = ?"
-    val stmt = conn.prepareStatement(sql)
-    stmt.setString(1, group)
-    stmt.setString(2, day)
-    stmt.executeUpdate()
-    stmt.close()
-  }
-}
-
-  // Закрытие соединения с БД
-  def closeConnection(): Unit = {
-  connection.toOption.foreach { conn =>
-    if (!conn.isClosed) conn.close()
-  }
-}
+  def getTimetableByGroup(group: String): Try[List[TimetableEntry]] = queryList(
+    "SELECT day, time, subject, room FROM timetables WHERE group_name = ?",
+    Some(_.setString(1, group))
+  )(rs => TimetableEntry(
+    rs.getString("day"),
+    rs.getString("time"),
+    rs.getString("subject"),
+    rs.getString("room")
+  ))
 }

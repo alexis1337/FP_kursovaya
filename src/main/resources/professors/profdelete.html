@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Удалить преподавателя</title>
+</head>
+<body>
+  <h1>Удалить преподавателя</h1>
+  <form method="POST" action="/professorActions/delete">
+    <label>Имя преподавателя для удаления: <input type="text" name="name" required /></label><br/>
+    <button type="submit">Удалить</button>
+  </form>
+  <h2>Текущий список преподавателей:</h2>
+  <ul>
+    {professorList}
+  </ul>
+  <a href="/professorActions">Назад</a>
+</body>
+</html>

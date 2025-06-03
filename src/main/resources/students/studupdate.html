@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Редактировать студента</title>
+</head>
+<body>
+  <h1>Редактировать студента</h1>
+  <form method="POST" action="/studentActions/edit">
+    <label>Имя студента для поиска: <input type="text" name="searchName" required /></label><br/>
+    <label>Новое имя: <input type="text" name="name" /></label><br/>
+    <label>Новая группа: <input type="text" name="group" /></label><br/>
+    <label>Новый год: <input type="number" name="year" min="1" max="6" /></label><br/>
+    <label>Новое направление: <input type="text" name="direction" /></label><br/>
+    <label>Новый факультет: <input type="text" name="faculty" /></label><br/>
+    <button type="submit">Обновить</button>
+  </form>
+  <a href="/studentActions">Назад</a>
+</body>
+</html>

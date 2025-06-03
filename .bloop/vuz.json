@@ -17,7 +17,13 @@
             "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.3.1\\scala3-library_3-3.3.1.jar",
             "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\modules\\scala-parser-combinators_3\\2.3.0\\scala-parser-combinators_3-2.3.0.jar",
             "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\xerial\\sqlite-jdbc\\3.34.0\\sqlite-jdbc-3.34.0.jar",
-            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar"
+            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-core_3\\2.10.0\\cats-core_3-2.10.0.jar",
+            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect_3\\3.5.1\\cats-effect_3-3.5.1.jar",
+            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\sun\\net\\httpserver\\http\\20070405\\http-20070405.jar",
+            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar",
+            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-kernel_3\\2.10.0\\cats-kernel_3-2.10.0.jar",
+            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect-kernel_3\\3.5.1\\cats-effect-kernel_3-3.5.1.jar",
+            "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect-std_3\\3.5.1\\cats-effect-std_3-3.5.1.jar"
         ],
         "out": "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\.bloop\\vuz",
         "classesDir": "C:\\Users\\Alexis\\AppData\\Local\\Temp\\vuz\\.bloop\\vuz\\scala-3\\classes",
@@ -183,7 +189,13 @@
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala3-library_3\\3.3.1\\scala3-library_3-3.3.1.jar",
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\modules\\scala-parser-combinators_3\\2.3.0\\scala-parser-combinators_3-2.3.0.jar",
                 "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\xerial\\sqlite-jdbc\\3.34.0\\sqlite-jdbc-3.34.0.jar",
-                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar"
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-core_3\\2.10.0\\cats-core_3-2.10.0.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect_3\\3.5.1\\cats-effect_3-3.5.1.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\sun\\net\\httpserver\\http\\20070405\\http-20070405.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-kernel_3\\2.10.0\\cats-kernel_3-2.10.0.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect-kernel_3\\3.5.1\\cats-effect-kernel_3-3.5.1.jar",
+                "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect-std_3\\3.5.1\\cats-effect-std_3-3.5.1.jar"
             ]
         },
         "resolution": {
@@ -240,6 +252,57 @@
                     ]
                 },
                 {
+                    "organization": "org.typelevel",
+                    "name": "cats-core_3",
+                    "version": "2.10.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-core_3",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-core_3\\2.10.0\\cats-core_3-2.10.0.jar"
+                        },
+                        {
+                            "name": "cats-core_3",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-core_3\\2.10.0\\cats-core_3-2.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-effect_3",
+                    "version": "3.5.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-effect_3",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect_3\\3.5.1\\cats-effect_3-3.5.1.jar"
+                        },
+                        {
+                            "name": "cats-effect_3",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect_3\\3.5.1\\cats-effect_3-3.5.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.sun.net.httpserver",
+                    "name": "http",
+                    "version": "20070405",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "http",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\sun\\net\\httpserver\\http\\20070405\\http-20070405.jar"
+                        },
+                        {
+                            "name": "http",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\sun\\net\\httpserver\\http\\20070405\\http-20070405-sources.jar"
+                        }
+                    ]
+                },
+                {
                     "organization": "org.scala-lang",
                     "name": "scala-library",
                     "version": "2.13.10",
@@ -253,6 +316,57 @@
                             "name": "scala-library",
                             "classifier": "sources",
                             "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-kernel_3",
+                    "version": "2.10.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-kernel_3",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-kernel_3\\2.10.0\\cats-kernel_3-2.10.0.jar"
+                        },
+                        {
+                            "name": "cats-kernel_3",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-kernel_3\\2.10.0\\cats-kernel_3-2.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-effect-kernel_3",
+                    "version": "3.5.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-effect-kernel_3",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect-kernel_3\\3.5.1\\cats-effect-kernel_3-3.5.1.jar"
+                        },
+                        {
+                            "name": "cats-effect-kernel_3",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect-kernel_3\\3.5.1\\cats-effect-kernel_3-3.5.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-effect-std_3",
+                    "version": "3.5.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-effect-std_3",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect-std_3\\3.5.1\\cats-effect-std_3-3.5.1.jar"
+                        },
+                        {
+                            "name": "cats-effect-std_3",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Alexis\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\typelevel\\cats-effect-std_3\\3.5.1\\cats-effect-std_3-3.5.1-sources.jar"
                         }
                     ]
                 }

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Добавить запись в расписание</title>
+</head>
+<body>
+  <h1>Добавить запись в расписание</h1>
+  <form method="POST" action="/timetableActions/add">
+    <label>Группа: <input type="text" name="group" required /></label><br/>
+    <label>День недели: <input type="text" name="day" required /></label><br/>
+    <label>Время: <input type="text" name="time" required /></label><br/>
+    <label>Предмет: <input type="text" name="subject" required /></label><br/>
+    <label>Аудитория: <input type="text" name="room" required /></label><br/>
+    <button type="submit">Добавить</button>
+  </form>
+  <a href="/timetableActions">Назад</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Меню Абитуриента</title>
+</head>
+<body>
+  <h1>Меню Абитуриента</h1>
+  <form method="POST" action="/applicant">
+    <label>Введите ваши баллы ЕГЭ: <input type="text" name="score" required /></label>
+    <button type="submit">Проверить направления</button>
+  </form>
+
+  <div id="resultSection">
+    {resultSection} 
+  </div>
+
+  <a href="/menu">Вернуться в меню</a>
+</body>
+</html>

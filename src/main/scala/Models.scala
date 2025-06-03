@@ -6,6 +6,8 @@ object Models { // Предполагается внедрение аутент�
   case class GroupTimetable(group: String, entries: List[TimetableEntry])
   case class Direction(name: String, faculty: String, passScore: Int)
 
+  case class MenuState(selectedOption: String)
+
   sealed trait Role
   case object StudentRole extends Role
   case object ProfessorRole extends Role

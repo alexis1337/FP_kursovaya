@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Поиск студентов</title>
+</head>
+<body>
+  <h1>{header}</h1>
+  <form method="GET" action="/students">
+    <label>Имя студента: <input type="text" name="name" value="{searchName}" /></label>
+    <button type="submit">Поиск</button>
+  </form>
+  <ul>
+    {studentList}
+  </ul>
+  <a href="/studentActions">Действия со студентами</a><br/>
+  <a href="/menu">Вернуться в меню</a>
+</body>
+</html>

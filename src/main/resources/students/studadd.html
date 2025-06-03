@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Добавить студента</title>
+</head>
+<body>
+  <h1>Добавить студента</h1>
+  <form method="POST" action="/studentActions/add">
+    <label>Имя: <input type="text" name="name" required /></label><br/>
+    <label>Группа: <input type="text" name="group" required /></label><br/>
+    <label>Год: <input type="number" name="year" required min="2022" max="2024" /></label><br/>
+    <label>Направление: <input type="text" name="direction" required /></label><br/>
+    <label>Факультет: <input type="text" name="faculty" required /></label><br/>
+    <button type="submit">Добавить</button>
+  </form>
+  <a href="/studentActions">Назад</a>
+</body>
+</html>
